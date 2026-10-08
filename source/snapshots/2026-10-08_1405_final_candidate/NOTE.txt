@@ -1,0 +1,8 @@
+Final candidate (engine work ended 2026-10-08 14:05; see docs/progress.md).
+Enabled by default: SEARCH_IMPROVING (improving flag, late-move pruning), SEARCH_HISTLMR (history-adjusted LMR), SEARCH_IIR (internal iterative reduction).
+Disabled by default (tested and rejected or not adopted): SEARCH_SINGULAR, SEARCH_SEEPRUNE, SEARCH_QTT, SEARCH_COUNTER, SEARCH_PROBCUT, SEARCH_RAZOR, SEARCH_NMV, SEARCH_IMPROVING_RFP, EVAL_EXTRA.
+Always on (not switches): mobility, king safety, pawn structure, bishop pair, rook on open files, the time-management fix.
+Search check: Kiwipete depth 12 gives 1171515 nodes and score -69 cp (rebuilt 16:44 from this exact source; same as the IIR release).
+Verified: perft 126/126 to depth 6 (suite at 11:06; the switch cleanup afterwards is source-only, and depth 5 was re-run), --compliance 40/40, imports KERNEL32 and msvcrt only, launches from cmd without MinGW on PATH.
+Sanity: 40 games vs Stash 20 at 10+0.1: 30 W / 3 L / 7 D.
+Anchor: vs Stash 21, 200 games at 10+0.1: 97 W / 68 L / 35 D, +51 +/- 46 Elo.

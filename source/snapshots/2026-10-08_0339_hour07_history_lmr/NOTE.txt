@@ -1,0 +1,1 @@
+History-adjusted LMR (SEARCH_HISTLMR=1): quiet-move reduction -1 when history > 4000, +1 when < -4000. SPRT vs previous release (elo0=0 elo1=10): 1302 games, 409 W / 324 L / 569 D, +23 +/- 13 Elo, LLR 2.96 (accept).

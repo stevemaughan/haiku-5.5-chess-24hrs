@@ -1,0 +1,1 @@
+Internal iterative reduction (SEARCH_IIR=1): at nodes with depth >= 4, not in check, and no transposition-table move, search one ply shallower. SPRT vs previous release (elo0=0 elo1=10): 1306 games, 390 W / 309 L / 607 D, +22 +/- 13 Elo, LLR 2.95 (accept).

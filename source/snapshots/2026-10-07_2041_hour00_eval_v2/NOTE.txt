@@ -1,0 +1,1 @@
+Eval v2 (promoted to final after 400-game self-play: 205W 87L 108D vs first release, +106 +/- 29 Elo). Adds bishop pair, isolated/doubled pawn penalties, passed pawn bonus by rank, rook on semi-open/open file. Mobility (EVAL_MOBILITY) and improving/LMP (SEARCH_IMPROVING) are present but switched off (0) in this build.

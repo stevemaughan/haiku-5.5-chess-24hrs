@@ -1,0 +1,1 @@
+Mobility on (EVAL_MOBILITY=1), promoted after SPRT vs eval v2 (elo0=0 elo1=15): 168 W / 107 L / 163 D over 438 games, +49 +/- 25 Elo, LLR 2.94 (accept). Mobility = knights/bishops/rooks/queens squares not own and not covered by enemy pawns, centred per piece type.

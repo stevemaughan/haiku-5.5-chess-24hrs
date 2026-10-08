@@ -1,0 +1,1 @@
+Improving flag + late-move pruning (SEARCH_IMPROVING=1). SPRT vs king-safety release (elo0=0 elo1=15): 710 games, 236 W / 177 L / 297 D, +29 +/- 18 Elo, LLR 2.94 (accept). LMP: quiet moves at depth <= 4 skipped once legal count >= (improving ? 5 : 3) + depth^2. Improving: static eval above the value two plies earlier (not in check); it adds one ply of LMR when not improving.

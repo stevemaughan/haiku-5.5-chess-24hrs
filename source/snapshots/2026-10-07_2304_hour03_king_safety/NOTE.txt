@@ -1,0 +1,1 @@
+King-safety term on (EVAL_KING=1). SPRT vs time-fix release (elo0=0 elo1=15): 1118 games, 396 W / 324 L / 398 D, +22 +/- 16 Elo, LLR 2.97 (accept). Enemy N/B/R/Q attacks on the king zone (2/2/3/5 units, penalty min(220, units^2*3/2) in mg, quarter in eg, only with 2+ attackers); pawn shield +6 per own pawn on the two ranks in front of a king on its back rank.
