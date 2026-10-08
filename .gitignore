@@ -25,3 +25,6 @@ source/build/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Test match PGNs (never committed; the opening book in resources/ is the only tracked PGN)
+source/tests/*.pgn
