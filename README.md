@@ -1,5 +1,8 @@
 # Haiku 5.5 chess 24hrs: a from-scratch UCI engine built in 24 hours
 
+**Official rating:** **2765 Elo ±24** (95% CI, CCRL Blitz scale), seventh of eight AI engines in the series;
+see [Official results](#official-results).
+
 Written for a reader who knows chess programming but nothing about this benchmark.
 
 ## What this is
@@ -156,4 +159,64 @@ Total games played in test runs (all tests, including the stopped and rejected o
 
 ## Official results
 
-_To be filled in by the human after the rating match._
+Rated by the benchmark operator on 8 October 2026 in 1,060 games, added to the series'
+existing rating dataset (10,380 games in total across all eight engines).
+
+**Haiku 5.5 chess 24hrs: 2765 Elo ±24 (95% CI), CCRL Blitz scale**, from 1,060 games
+(+388 =214 −458, 46.7% score). That is seventh of eight in the series, about 60 Elo above
+Sonnet 5 and about 280 Elo below Fable 5.
+
+The in-session estimate of about 2755 ±50 was close. Measured only against the five
+anchor engines, Haiku 5.5 rates **2768 ±27**, and each anchor on its own implies
+2734–2820. The games against the other AI engines agree: 58.1% against Sonnet 5 implies
+about 2760, and 15.0% against Fable 5 implies about 2744.
+
+### How the rating was measured
+
+- Tool: fastchess 1.8.2, time control **10 s + 0.1 s**, one thread, **64 MB hash**,
+  `timemargin 200`. (The development runs used Hash 256 and 16-ply openings.)
+- Openings: UHO unbalanced 8-ply book, random order, every opening played with
+  both colours.
+- Adjudication: resign after 3 moves at ±600 cp (two-sided); draw after move 40
+  when 8 consecutive moves stay within ±20 cp; 250-move cap. `-recover` on.
+- Format: a 72-game pilot (41.7% against Stash 21, Juggernaut and Stash 25) placed it
+  near 2740. Haiku 5.5 then played a gauntlet of 160 games each against five anchors
+  (Stash 20, Stash 21, Juggernaut, Stash 25 and Crafty, the same set used for Sonnet 5),
+  plus 160 games against Sonnet 5 and 100 against Fable 5. The stronger AI engines were
+  left out because they are ~380+ Elo stronger. Ratings come from an anchored
+  maximum-likelihood Elo fit over all games, with the anchors fixed at their CCRL Blitz
+  ratings.
+- Hardware: Ryzen AI 9 HX 375 (12 cores), 12 games at a time.
+- Clean run: Haiku 5.5 had no time losses, crashes, disconnects or illegal moves in 1,060
+  games, and produced no fastchess warnings at all. (The one time forfeit in the run was
+  by Stash 20.)
+
+### Series standings
+
+| Rank | Engine | Elo | 95% CI | Games |
+|---:|---|---:|:---:|---:|
+| 1 | Opus 5.5 chess 24hrs | 3463 | ±16 | 2,180 |
+| 2 | Sonnet 5.5 chess 24hrs | 3420 | ±16 | 2,180 |
+| 3 | Fable 5.1 chess 24hrs | 3260 | ±19 | 1,580 |
+| 4 | Opus 5 chess 24hrs | 3229 | ±19 | 1,580 |
+| 5 | Astra 6 chess 24hrs | 3144 | ±20 | 1,520 |
+| 6 | Fable 5 chess 24hrs | 3045 | ±21 | 1,300 |
+| **7** | **Haiku 5.5 chess 24hrs** | **2765** | **±24** | **1,060** |
+| 8 | Sonnet 5 chess 24hrs | 2703 | ±23 | 1,360 |
+
+### Haiku 5.5's individual results
+
+| Opponent | Rating | Games | +W | =D | −L | Score | Implied Elo |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Fable 5 (AI) | 3045 | 100 | 9 | 12 | 79 | 15.0% | 2744 |
+| Crafty 25.6 | 2970 | 160 | 30 | 35 | 95 | 29.7% | 2820 |
+| Stash 25 | 2932 | 160 | 27 | 36 | 97 | 28.1% | 2769 |
+| Juggernaut 2.01 | 2760 | 160 | 64 | 20 | 76 | 46.2% | 2734 |
+| Stash 21 | 2714 | 160 | 83 | 24 | 53 | 59.4% | 2780 |
+| Sonnet 5 (AI) | 2703 | 160 | 65 | 56 | 39 | 58.1% | 2760 |
+| Stash 20 | 2512 | 160 | 110 | 31 | 19 | 78.4% | 2736 |
+
+Anchor ratings are CCRL Blitz (2'+1") values from 2 Sep 2026. AI-engine ratings are their
+fitted values from the same run. The ±24 interval is statistical only. It does not include
+the uncertainty in transferring CCRL ratings to 10+0.1 on this machine, so the result is a
+rating "on the CCRL Blitz scale under 10+0.1 conditions", not a CCRL rating.
